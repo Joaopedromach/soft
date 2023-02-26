@@ -1,0 +1,56 @@
+﻿@model Soft.Models.Produtos
+
+@{
+    ViewData["Title"] = "Cadastro de produtos";
+}
+
+<h1>Cadastro de Produtos</h1>
+
+<h4>Produtos</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Descricao" class="control-label"></label>
+                <input asp-for="Descricao" class="form-control" />
+                <span asp-validation-for="Descricao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Codigo" class="control-label"></label>
+                <input lang="pt-br" asp-for="Codigo" class="form-control" />
+                
+                <span asp-validation-for="Codigo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Venda" class="control-label"></label>
+                <input lang="pt-br" asp-for="Venda" class="form-control" />
+                <span asp-validation-for="Venda" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PesoBruto" class="control-label"></label>
+                <input lang="pt-br" asp-for="PesoBruto" class="form-control" />
+                <span asp-validation-for="PesoBruto" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PesoLiquido" class="control-label"></label>
+                <input lang="pt-br" asp-for="PesoLiquido" class="form-control" />
+                <span asp-validation-for="PesoLiquido" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Criar" class="btn btn-primary" />
+            </div>
+            <br />
+        </form>
+    </div>
+</div>
+            
+<div>
+    <a class="btn btn-primary" asp-action="Index">Voltar</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
